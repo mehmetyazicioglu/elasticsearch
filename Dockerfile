@@ -1,14 +1,10 @@
 FROM docker.elastic.co/elasticsearch/elasticsearch:7.14.0
 
-LABEL Maintainer= Mehmet
+LABEL Maintainer="mehmet yazicioglu"
 
 USER root
 
-# copy custom entrypoint:
-COPY docker-entrypoint /usr/local/bin/docker-entrypoint
+RUN yum update -y \
+    && yum clean all 
 
-RUN chmod 755 /usr/local/bin/docker-entrypoint \
-    && yum update -y \
-    && yum clean all \
-
-USER kibana
+USER elastic
