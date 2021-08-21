@@ -1,2 +1,2 @@
 # elasticsearch
-simple basic elasticsearch image. 
+simple basic elasticsearch image for ELK stack.
